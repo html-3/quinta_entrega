@@ -9,9 +9,9 @@ class Cliente(db.Model):
     descricao=db.Column(db.String(300),nullable=False)
     endereco=db.Column(db.String(100),nullable=False)
     telefone=db.Column(db.String(20),nullable=False)
-    horario_data=db.Column(db.DateTime,nullable=False)
-    banho=db.Column(db.Boolean,default=False)
-    tosa=db.Column(db.Boolean,default=False)
+    horario=db.Column(db.String(5),nullable=False)
+    banho=db.Column(db.Boolean,nullable=False)
+    tosa=db.Column(db.Boolean,nullable=False)
 
     def json(self):
         return{
@@ -20,7 +20,7 @@ class Cliente(db.Model):
             "descricao": self.descricao,
             "endereco": self.endereco,
             "telefone": self.telefone,
-            "horario_data": self.horario_data,
+            "horario": self.horario,
             "banho": self.banho,
             "tosa": self.tosa
         }
